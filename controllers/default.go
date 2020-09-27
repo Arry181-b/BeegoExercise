@@ -46,7 +46,8 @@ func (c *MainController) Post(){
 	var person models.Person
 	err = json.Unmarshal(dataByes,&person)
 	if err != nil{
-		c.Ctx.WriteString("数据解析失败，请重试")
+		fmt.Println(err.Error())
+		c.Ctx.WriteString("数据解析失败，try again")
 		return
 	}
 	fmt.Println("用户名：",person.User,"年龄：",person.Age)
@@ -64,7 +65,7 @@ func (c *MainController) Post(){
 
 	////与固定值比较
 	//if user != "admin" || psd != "20010331" {
-	//	//数百页面
+	//	失败页面
 	//	c.Ctx.ResponseWriter.Write([]byte("对不起，数据不正确"))
 	//	return
 	//}

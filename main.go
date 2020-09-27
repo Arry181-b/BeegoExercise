@@ -2,7 +2,6 @@ package main
 
 import (
 	_ "BeegoExercise/routers"
-	"database/sql"
 	"fmt"
 	"github.com/astaxie/beego"
 )
@@ -20,17 +19,17 @@ func main() {
 		panic("项目配置信息解析错误，请查验后重试")
 	}
 	fmt.Println("应用监听端口：",port)
-	driver := config.String("db_driver") //数据库驱动
-	dbUser := config.String("db_user")//数据库用户名
-	dbPassword := config.String("db_password") //密码
-	dbIP := config.String("db_ip")
-	dbName := config.String("db_name")
+	//driver := config.String("db_driver") //数据库驱动
+	//dbUser := config.String("db_user")//数据库用户名
+	//dbPassword := config.String("db_password") //密码
+	//dbIP := config.String("db_ip")
+	//dbName := config.String("db_name")
 
-	db,err := sql.Open(driver,dbUser+":"+dbPassword+"@tcp("+dbIP+")/"+dbName+"?charset=utf8")
-	if err != nil {
-		panic("数据库连接失败，请重试")
-	}
-	fmt.Println(db)
+	//db,err := sql.Open(driver,dbUser+":"+dbPassword+"@tcp("+dbIP+")/"+dbName+"?charset=utf8")
+	//if err != nil {
+	//	panic("数据库连接失败，请重试")
+	//}
+	//fmt.Println(db)
 
 	beego.Run()
 }
