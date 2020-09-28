@@ -6,6 +6,7 @@ import (
 )
 
 func init() {
+	beego.Router("/",&controllers.RegisterController{})
     beego.Router("/", &controllers.MainController{})
 }
 

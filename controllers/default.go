@@ -18,6 +18,7 @@ func (c *MainController) Get() {
 	c.Data["Website"] = "www.baidu.com"
 	c.Data["Email"] = "646844086@qq.com"
 	c.TplName = "index.tpl"
+	
 	//name := c.GetString("name")
 	//age1,err := c.GetInt("19")
 	//获取get类型请求方式
